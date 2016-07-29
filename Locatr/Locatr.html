@@ -1,0 +1,68 @@
+<html>
+<head>
+	<title>Locatr Example</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+	<script type="text/javascript" src="cloudLocation.js"></script>
+	<script src="https://cdn.apple-cloudkit.com/ck/1/cloudkit.js" async></script>
+	 <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY">
+    </script>
+    
+      <style>
+      html, body {
+        height: 50%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+    
+</head>
+<body>
+
+	<div class="container">
+
+		<div class="page-header">
+			<h1>Locatr <small>CloudKit JS Application</small></h1>
+		</div>
+
+    <div id="map"></div>
+		
+		&nbsp;
+
+		<div data-bind="foreach: locations">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h4><a data-bind="click: $parent.initMap"><span data-bind="text: fields.locationTitle.value"></span></a></h4>
+					<p>Latitute: <span data-bind="text: fields.sharedLocation.value.latitude"></span></p>
+					<p>Longitude: <span data-bind="text: fields.sharedLocation.value.longitude"></span></p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+<script>
+
+function initMap () {
+      	  var myLatLng = {lat: 51.2, lng: -1.54};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'A Map'
+        });
+      }
+</script>
+
+</body>
+</html>

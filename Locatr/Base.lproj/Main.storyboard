@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11173.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11143.2"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Locatr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +17,43 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1nE-SP-BJe">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="389" id="nmz-BQ-YFI"/>
+                                </constraints>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r81-7b-sNa">
+                                <state key="normal" title="Update location"/>
+                                <connections>
+                                    <action selector="updateLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EON-ek-DKn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5WM-Dc-Xjf">
+                                <state key="normal" title="Share location"/>
+                                <connections>
+                                    <action selector="shareLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3nl-vZ-akB"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="r81-7b-sNa" firstAttribute="centerX" secondItem="1nE-SP-BJe" secondAttribute="centerX" id="6JW-jy-Iqi"/>
+                            <constraint firstItem="5WM-Dc-Xjf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B2h-c8-VkD"/>
+                            <constraint firstAttribute="trailing" secondItem="1nE-SP-BJe" secondAttribute="trailing" id="EWe-lD-yY4"/>
+                            <constraint firstItem="r81-7b-sNa" firstAttribute="top" secondItem="1nE-SP-BJe" secondAttribute="bottom" constant="47" id="F0w-PG-zJN"/>
+                            <constraint firstItem="5WM-Dc-Xjf" firstAttribute="top" secondItem="r81-7b-sNa" secondAttribute="bottom" constant="8" id="OHy-eC-xmh"/>
+                            <constraint firstItem="1nE-SP-BJe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tE6-ZE-xHS"/>
+                            <constraint firstItem="1nE-SP-BJe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wPU-Pi-5es"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="1nE-SP-BJe" id="MZm-N0-euN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>

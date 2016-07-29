@@ -12,6 +12,9 @@
 		8660C5CC1D4B83000079B6FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8660C5CA1D4B83000079B6FD /* Main.storyboard */; };
 		8660C5CE1D4B83000079B6FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8660C5CD1D4B83000079B6FD /* Assets.xcassets */; };
 		8660C5D11D4B83000079B6FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8660C5CF1D4B83000079B6FD /* LaunchScreen.storyboard */; };
+		8660C5DB1D4B90EC0079B6FD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8660C5DA1D4B90EC0079B6FD /* CloudKit.framework */; };
+		9E5155E11D4BB814003006F0 /* cloudLocation.js in Resources */ = {isa = PBXBuildFile; fileRef = 9E5155DF1D4BB814003006F0 /* cloudLocation.js */; };
+		9E5155E21D4BB814003006F0 /* Locatr.html in Resources */ = {isa = PBXBuildFile; fileRef = 9E5155E01D4BB814003006F0 /* Locatr.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,10 @@
 		8660C5CD1D4B83000079B6FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8660C5D01D4B83000079B6FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8660C5D21D4B83000079B6FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8660C5D81D4B90E70079B6FD /* Locatr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Locatr.entitlements; sourceTree = "<group>"; };
+		8660C5DA1D4B90EC0079B6FD /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		9E5155DF1D4BB814003006F0 /* cloudLocation.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = cloudLocation.js; sourceTree = "<group>"; };
+		9E5155E01D4BB814003006F0 /* Locatr.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Locatr.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8660C5DB1D4B90EC0079B6FD /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +48,7 @@
 			children = (
 				8660C5C51D4B83000079B6FD /* Locatr */,
 				8660C5C41D4B83000079B6FD /* Products */,
+				8660C5D91D4B90EC0079B6FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +63,8 @@
 		8660C5C51D4B83000079B6FD /* Locatr */ = {
 			isa = PBXGroup;
 			children = (
+				9E5155DE1D4BB80B003006F0 /* WEBAPP */,
+				8660C5D81D4B90E70079B6FD /* Locatr.entitlements */,
 				8660C5C61D4B83000079B6FD /* AppDelegate.swift */,
 				8660C5C81D4B83000079B6FD /* ViewController.swift */,
 				8660C5CA1D4B83000079B6FD /* Main.storyboard */,
@@ -62,6 +73,23 @@
 				8660C5D21D4B83000079B6FD /* Info.plist */,
 			);
 			path = Locatr;
+			sourceTree = "<group>";
+		};
+		8660C5D91D4B90EC0079B6FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8660C5DA1D4B90EC0079B6FD /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9E5155DE1D4BB80B003006F0 /* WEBAPP */ = {
+			isa = PBXGroup;
+			children = (
+				9E5155DF1D4BB814003006F0 /* cloudLocation.js */,
+				9E5155E01D4BB814003006F0 /* Locatr.html */,
+			);
+			name = WEBAPP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,7 +124,14 @@
 				TargetAttributes = {
 					8660C5C21D4B83000079B6FD = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = SBWZW765RG;
+						DevelopmentTeamName = "Daniel Autenrieth";
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -125,7 +160,9 @@
 			files = (
 				8660C5D11D4B83000079B6FD /* LaunchScreen.storyboard in Resources */,
 				8660C5CE1D4B83000079B6FD /* Assets.xcassets in Resources */,
+				9E5155E21D4BB814003006F0 /* Locatr.html in Resources */,
 				8660C5CC1D4B83000079B6FD /* Main.storyboard in Resources */,
+				9E5155E11D4BB814003006F0 /* cloudLocation.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +291,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Locatr/Locatr.entitlements;
 				INFOPLIST_FILE = Locatr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.brianAdvent.Locatr;
@@ -266,6 +304,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Locatr/Locatr.entitlements;
 				INFOPLIST_FILE = Locatr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.brianAdvent.Locatr;
@@ -293,6 +332,7 @@
 				8660C5D71D4B83000079B6FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
